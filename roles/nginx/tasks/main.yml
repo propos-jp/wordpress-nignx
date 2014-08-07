@@ -1,0 +1,11 @@
+  - name: install software-properties-common
+    apt: name=software-properties-common state=present
+  - name: add-apt-repository ppa:nginx/stable
+    command: add-apt-repository ppa:nginx/stable -y
+  - name: apt-get update
+    apt: update_cache=yes
+  - name: install nginx
+    apt: name=nginx state=latest
+
+
+
